@@ -16,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 //Auth Routing
 require __DIR__.'/auth.php';
 
-//Front Routing
+/*
+|--------------------------------------------------------------------------
+| Front Routes
+|--------------------------------------------------------------------------
+*/
 
+//index
+Route::get('',[\App\Http\Controllers\Front\PageController::class,'index'])->name('front_index');
