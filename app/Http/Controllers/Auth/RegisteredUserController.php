@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        return view('template.auth');
     }
 
     /**
@@ -35,20 +35,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'phone' => 'required|numeric|unique:users',
+            'password' => ['required', 'confirmed','min:6'],
         ]);
 
         $user = User::create([
+            'role_id'=>3,
             'name' => $request->name,
-            'email' => $request->email,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
-
+        front_simple_message('',"$user->name عزیز ، ثبت نام شما با موفقیت انجام شد . به فروشگاه سوگل خوش آمدید");
         return redirect(RouteServiceProvider::HOME);
     }
 }

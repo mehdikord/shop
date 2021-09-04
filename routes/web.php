@@ -24,3 +24,15 @@ require __DIR__.'/auth.php';
 
 //index
 Route::get('',[\App\Http\Controllers\Front\PageController::class,'index'])->name('front_index');
+
+
+/*
+|--------------------------------------------------------------------------
+| Panel Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('panel')->middleware(['auth'])->group(function (){
+
+    Route::get('',[\App\Http\Controllers\Panel\DashboardController::class,'index'])->name('panel_dashboard');
+});
