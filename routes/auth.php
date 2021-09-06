@@ -16,7 +16,7 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')->name('auth_register');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('guest');
+                ->middleware('guest')->name('front_auth_login');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')

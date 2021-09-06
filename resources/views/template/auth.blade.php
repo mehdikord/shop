@@ -28,14 +28,15 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form">
                         <h2>ورود</h2>
-                        <form action="#">
+                        <form action="{{ route('front_auth_login') }}" method="post">
+                            @csrf
                             <p>
                                 <label>شماره موبایل <span>*</span></label>
-                                <input type="number">
+                                <input name="phone" required type="number">
                             </p>
                             <p>
                                 <label>رمز عبور <span>*</span></label>
-                                <input type="password">
+                                <input name="password" required type="password">
                             </p>
                             <div class="login_submit">
                                 <a href="#">رمز عبور خود را فراموش کرده اید؟</a>
@@ -43,7 +44,6 @@
                                     <input id="remember" type="checkbox"> به خاطر سپاری
                                 </label>
                                 <button type="submit">ورود</button>
-
                             </div>
 
                         </form>
