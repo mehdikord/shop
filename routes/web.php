@@ -35,4 +35,5 @@ Route::get('',[\App\Http\Controllers\Front\PageController::class,'index'])->name
 Route::prefix('panel')->middleware(['auth'])->group(function (){
 
     Route::get('',[\App\Http\Controllers\Panel\DashboardController::class,'index'])->name('panel_dashboard');
+
 });

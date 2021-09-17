@@ -70,7 +70,7 @@ body {
     background: #ffffff;
     font-size: 14px; }
 body.christmas {
-    font-family: IRANSans, sans-serif; 
+    font-family: IRANSans, sans-serif;
 	}
 body.christmas .dark-light {
     display: none; }
@@ -16485,7 +16485,7 @@ input:focus {
 .page-main-header .main-header-right .nav-right .language-dropdown li:first-child {
     padding-top: 0; }
 .page-main-header .main-header-right .nav-right .profile-dropdown {
-    right: -10px;
+    right: -110px;
     left: inherit;
     width: 150px;
     top: 63px; }
