@@ -32,8 +32,14 @@ Route::get('',[\App\Http\Controllers\Front\PageController::class,'index'])->name
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('panel')->middleware(['auth'])->group(function (){
+Route::prefix('panel')->group(function (){
 
     Route::get('',[\App\Http\Controllers\Panel\DashboardController::class,'index'])->name('panel_dashboard');
+
+    //Categories
+    Route::prefix('categories')->group(function (){
+
+        Route::get('',[\App\Http\Controllers\Panel\CategoryController::class,'index'])->name('panel_categories');
+    });
 
 });
