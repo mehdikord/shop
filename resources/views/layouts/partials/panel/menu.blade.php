@@ -19,7 +19,7 @@
     <div class="collapsible-body">
         <ul class="collapsible collapsible-sub" data-collapsible="accordion">
             <li>
-                <a href="dashboard-modern.html">
+                <a href="{{ route('panel_categories') }}">
                     <i class="material-icons">radio_button_unchecked</i>
                     <span data-i18n="Modern">لیست دسته بندی</span>
                 </a>

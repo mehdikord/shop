@@ -15,7 +15,7 @@ class AddNewFieldIntoUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('role_id')->nullable()->after('id');
-            $table->string('phone')->nullable();
+            $table->string('phone')->nullable()->after('name');
             $table->boolean('is_active')->default(1);
             $table->boolean('commenting')->default(1);
             $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
