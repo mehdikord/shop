@@ -6,1002 +6,427 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description"
-          content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
-    <meta name="keywords"
-          content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
-    <meta name="author" content="ThemeSelect">
-    <title></title>
-    <link rel="apple-touch-icon" href="{{ asset('manage/images/favicon/apple-touch-icon-152x152.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('manage/images/favicon/favicon-32x32.png') }}">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('manage/vendors/vendors.min.css') }}">
-    <!-- END: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('manage/css-rtl/style-rtl.min.css') }}">
-    <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('manage/css-rtl/themes/vertical-dark-menu-template/materialize.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('manage/css-rtl/themes/vertical-dark-menu-template/style.min.css') }}">
-    <!-- END: Page Level CSS-->
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('manage/css-rtl/custom/custom.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="author" content="mehdikord">
+    <title>Shop Panel</title>
+    <link rel="apple-touch-icon" href="{{ asset('manage/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('manage/app-assets/images/ico/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('fonts/css/font.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome6/css/all.min.css') }}">
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/vendors-rtl.min.css') }}">
+    <!-- END: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/forms/select/select2.min.css') }}">
+
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/bootstrap-extended.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/colors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/components.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/themes/dark-layout.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/themes/semi-dark-layout.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/custom-rtl.min.css') }}">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/css-rtl/core/menu/menu-types/vertical-menu.min.css') }}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/assets/css/style-rtl.css') }}">
     <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="{{ asset('fonts/css/font.css') }}">
     @yield('head')
 </head>
 <!-- END: Head-->
 
-<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 2-columns "data-open="click" data-menu="vertical-dark-menu" data-col="2-columns">
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-sticky footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 
 <!-- BEGIN: Header-->
-<header class="page-topbar" id="header">
-    <div class="navbar navbar-fixed">
-        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light">
-            <div class="nav-wrapper">
-{{--                <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>--}}
-{{--                    <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Search Everything"--}}
-{{--                           data-search="template-list">--}}
-{{--                    <ul class="search-list collection display-none"></ul>--}}
-{{--                </div>--}}
-                <ul class="navbar-list right">
-{{--                    <li class="dropdown-language">--}}
-{{--                        <a class="waves-effect waves-block waves-light translation-button" href="#" data-target="translation-dropdown">--}}
-{{--                            <span class="flag-icon flag-icon-gb"></span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-                    <li class="hide-on-med-and-down">
-                        <a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);">
-                            <i class="material-icons">settings_overscan</i>
+<div class="header-navbar-shadow"></div>
+<nav class="header-navbar main-header-navbar navbar-expand-lg navbar navbar-with-menu fixed-top ">
+    <div class="navbar-wrapper">
+        <div class="navbar-container content">
+            <div class="navbar-collapse" id="navbar-mobile">
+                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item mobile-menu d-xl-none mr-auto">
+                            <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="javascript:void(0);"><i class="ficon bx bx-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav bookmark-icons">
+                        <li>
+                            <span class="text-dark font-14 text-bold-3">{{ \Morilog\Jalali\Jalalian::now()->format("Y/m/d") }}</span>
+                            <i class="bx bx-calendar text-primary font-25"></i>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i
+                                class="ficon bx bx-fullscreen"></i></a></li>
+                    <li class="nav-item nav-search">
+                        <a class="nav-link nav-link-search"><i class="ficon bx bx-search"></i></a>
+                        <div class="search-input">
+                            <div class="search-input-icon"><i class="bx bx-search primary"></i></div>
+                            <input class="input" type="text" placeholder="جستجو در مدیریت ..." tabindex="-1" data-search="template-search">
+                            <div class="search-input-close"><i class="bx bx-x"></i></div>
+                            <ul class="search-list"></ul>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-user nav-item">
+                        <a class="dropdown-toggle nav-link dropdown-user-link" href="javascript:void(0);" data-toggle="dropdown">
+                            <div class="user-nav d-sm-flex d-none">
+                                <span class="user-name">{{ auth()->user()->name }}</span>
+                                <span class="user-status text-muted">{{ !empty(auth()->user()->role_id)?  auth()->user()->role->role : '' }}</span>
+                            </div>
+                            <span><img class="round" src="{{ asset('manage/app-assets/images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40" width="40"></span>
                         </a>
-                    </li>
-                    <li class="hide-on-large-only search-input-wrapper">
-                        <a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);">
-                            <i class="material-icons">search</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown">
-                            <i class="material-icons">notifications_none
-                                <small class="notification-badge">5</small>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
-                            <span class="avatar-status avatar-online">
-                                <img src="{{asset('manage/images/user/admin-default.png')}}" alt="avatar">
-                                <i></i>
-                            </span>
-                        </a>
-                    </li>
-{{--                    <li>--}}
-{{--                        <a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right">--}}
-{{--                            <i class="material-icons">format_indent_increase</i>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-                </ul>
-                <!-- translation-button-->
-{{--                <ul class="dropdown-content" id="translation-dropdown">--}}
-{{--                    <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="en"><i--}}
-{{--                                class="flag-icon flag-icon-gb"></i> English</a></li>--}}
-{{--                    <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="fr"><i--}}
-{{--                                class="flag-icon flag-icon-fr"></i> French</a></li>--}}
-{{--                    <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="pt"><i--}}
-{{--                                class="flag-icon flag-icon-pt"></i> Portuguese</a></li>--}}
-{{--                    <li class="dropdown-item"><a class="grey-text text-darken-1" href="#!" data-language="de"><i--}}
-{{--                                class="flag-icon flag-icon-de"></i> German</a></li>--}}
-{{--                </ul>--}}
-                <!-- notifications-dropdown-->
-                <ul class="dropdown-content" id="notifications-dropdown">
-                    <li>
-                        <h6>NOTIFICATIONS<span class="new badge">5</span></h6>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a class="black-text" href="#!"><span
-                                class="material-icons icon-bg-circle cyan small">add_shopping_cart</span> A new order has been
-                            placed!</a>
-                        <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
-                    </li>
-                </ul>
-                <!-- profile-dropdown-->
-                <ul class="dropdown-content" id="profile-dropdown">
-                    <li>
-                        <a class="grey-text text-darken-1" href="user-profile-page.html">
-                            <i class="material-icons">person_outline</i> Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-darken-1" href="app-chat.html">
-                            <i class="material-icons">chat_bubble_outline</i> Chat
-                        </a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-darken-1" href="page-faq.html">
-                            <i class="material-icons">help_outline</i>
-                            Help
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="grey-text text-darken-1" href="user-lock-screen.html">
-                            <i class="material-icons">lock_outline</i> Lock</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-darken-1" href="user-login.html">
-                            <i class="material-icons">keyboard_tab</i>Logout
-                        </a>
+                        <div class="dropdown-menu dropdown-menu-right pb-0">
+                            <a class="dropdown-item" href="page-user-profile.html"><i class="bx bx-user mr-50"></i> Edit Profile</a>
+                            <a class="dropdown-item" href="app-email.html"><i class="bx bx-envelope mr-50"></i> My Inbox</a>
+                            <a class="dropdown-item" href="app-todo.html"><i class="bx bx-check-square mr-50"></i> Task</a>
+                            <a class="dropdown-item" href="app-chat.html"><i class="bx bx-message mr-50"></i> Chats</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="auth-login.html"><i class="bx bx-power-off mr-50"></i> Logout</a>
+                        </div>
                     </li>
                 </ul>
             </div>
-            <nav class="display-none search-sm">
-                <div class="nav-wrapper">
-                    <form id="navbarForm">
-                        <div class="input-field search-input-sm">
-                            <input class="search-box-sm mb-0" type="search" required="" id="search"
-                                   placeholder="Explore Materialize" data-search="template-list">
-                            <label class="label-icon" for="search"><i class="material-icons search-sm-icon">search</i></label><i
-                                class="material-icons search-sm-close">close</i>
-                            <ul class="search-list collection search-list-sm display-none"></ul>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-        </nav>
+        </div>
     </div>
-</header>
+</nav>
 <!-- END: Header-->
 
 
-
-<!-- BEGIN: SideNav-->
-<aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
-    <div class="brand-sidebar">
-        <h1 class="logo-wrapper">
-            <a class="brand-logo darken-1" href="{{route('front_index')}}">
-                <img class="hide-on-med-and-down " src="{{asset('assets/img/logo/logo.png')}}" alt="" />
-                <img class="show-on-medium-and-down hide-on-med-and-up" src="{{asset('assets/img/logo/logo.png')}}" alt="materialize logo" />
-                <span class="logo-text hide-on-med-and-down">s</span>
-            </a>
-            <a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a>
-        </h1>
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="">
+                    <div class="brand-logo">
+                        <svg class="logo" width="26px" height="26px" viewbox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>icon</title>
+                            <defs>
+                                <lineargradient id="linearGradient-1" x1="50%" y1="0%" x2="50%" y2="100%">
+                                    <stop stop-color="#5A8DEE" offset="0%"></stop>
+                                    <stop stop-color="#699AF9" offset="100%"></stop>
+                                </lineargradient>
+                                <lineargradient id="linearGradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop stop-color="#FDAC41" offset="0%"></stop>
+                                    <stop stop-color="#E38100" offset="100%"></stop>
+                                </lineargradient>
+                            </defs>
+                            <g id="Sprite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="sprite" transform="translate(-69.000000, -61.000000)">
+                                    <g id="Group" transform="translate(17.000000, 15.000000)">
+                                        <g id="icon" transform="translate(52.000000, 46.000000)">
+                                            <path id="Combined-Shape"
+                                                  d="M13.5909091,1.77272727 C20.4442608,1.77272727 26,7.19618701 26,13.8863636 C26,20.5765403 20.4442608,26 13.5909091,26 C6.73755742,26 1.18181818,20.5765403 1.18181818,13.8863636 C1.18181818,13.540626 1.19665566,13.1982714 1.22574292,12.8598734 L6.30410592,12.859962 C6.25499466,13.1951893 6.22958398,13.5378796 6.22958398,13.8863636 C6.22958398,17.8551125 9.52536149,21.0724191 13.5909091,21.0724191 C17.6564567,21.0724191 20.9522342,17.8551125 20.9522342,13.8863636 C20.9522342,9.91761479 17.6564567,6.70030817 13.5909091,6.70030817 C13.2336969,6.70030817 12.8824272,6.72514561 12.5388136,6.77314791 L12.5392575,1.81561642 C12.8859498,1.78721495 13.2366963,1.77272727 13.5909091,1.77272727 Z">
+                                            </path>
+                                            <path id="Combined-Shape"
+                                                  d="M13.8863636,4.72727273 C18.9447899,4.72727273 23.0454545,8.82793741 23.0454545,13.8863636 C23.0454545,18.9447899 18.9447899,23.0454545 13.8863636,23.0454545 C8.82793741,23.0454545 4.72727273,18.9447899 4.72727273,13.8863636 C4.72727273,13.5378966 4.74673291,13.1939746 4.7846258,12.8556254 L8.55057141,12.8560055 C8.48653249,13.1896162 8.45300462,13.5340745 8.45300462,13.8863636 C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.3197227 19.3197227,16.887125 19.3197227,13.8863636 C19.3197227,10.8856023 16.887125,8.45300462 13.8863636,8.45300462 C13.529522,8.45300462 13.180715,8.48740462 12.8430777,8.55306931 L12.8426531,4.78608796 C13.1851829,4.7472336 13.5334422,4.72727273 13.8863636,4.72727273 Z"
+                                                  fill="#4880EA"></path>
+                                            <path id="Combined-Shape"
+                                                  d="M13.5909091,1.77272727 C20.4442608,1.77272727 26,7.19618701 26,13.8863636 C26,20.5765403 20.4442608,26 13.5909091,26 C6.73755742,26 1.18181818,20.5765403 1.18181818,13.8863636 C1.18181818,13.540626 1.19665566,13.1982714 1.22574292,12.8598734 L6.30410592,12.859962 C6.25499466,13.1951893 6.22958398,13.5378796 6.22958398,13.8863636 C6.22958398,17.8551125 9.52536149,21.0724191 13.5909091,21.0724191 C17.6564567,21.0724191 20.9522342,17.8551125 20.9522342,13.8863636 C20.9522342,9.91761479 17.6564567,6.70030817 13.5909091,6.70030817 C13.2336969,6.70030817 12.8824272,6.72514561 12.5388136,6.77314791 L12.5392575,1.81561642 C12.8859498,1.78721495 13.2366963,1.77272727 13.5909091,1.77272727 Z"
+                                                  fill="url(#linearGradient-1)"></path>
+                                            <rect id="Rectangle" x="0" y="0" width="7.68181818" height="7.68181818"></rect>
+                                            <rect id="Rectangle" fill="url(#linearGradient-2)" x="0" y="0" width="7.68181818"
+                                                  height="7.68181818"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <h2 class="brand-text mb-0">Shop Panel</h2>
+                </a></li>
+            <li class="nav-item nav-toggle">
+                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
+                    <i class="bx bx-x d-block d-xl-none font-medium-4 primary"></i>
+                    <i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary" data-ticon="bx-disc"></i>
+                </a>
+            </li>
+        </ul>
     </div>
-    <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="accordion">
-        @include('layouts.partials.panel.menu')
-    </ul>
-    <div class="navigation-background">
+    <div class="shadow-bottom"></div>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
+          @include('layouts.partials.panel.menu')
+        </ul>
     </div>
-    <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out">
-        <i class="material-icons">menu</i>
-    </a>
-</aside>
-<!-- END: SideNav-->
+</div>
+<!-- END: Main Menu-->
 
-<!-- BEGIN: Page Main-->
-<div id="main">
-    <div class="row">
-
-        <div class="breadcrumbs-inline pt-3 pb-1" id="breadcrumbs-wrapper">
-            <!-- Search for small screen-->
-            <div class="container">
-                <div class="row">
-                    <div class="col s10 m6 l6 breadcrumbs-left">
-                        <h5 class="breadcrumbs-title mt-0 mb-0 display-inline hide-on-small-and-down"><span>{{ $title ?? '' }}</span></h5>
-                        <ol class="breadcrumbs mb-0">
-                            <li class="breadcrumb-item">
-                                <a href="index.html">{{ $subtitle ?? '' }}</a>
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="breadcrumbs-top">
+                    <h6 class="content-header-title float-left pr-1 mb-0 text-danger font-16 text-bold-3">{{ $title??'' }}</h6>
+                    <div class="breadcrumb-wrapper d-none d-sm-block">
+                        <ol class="breadcrumb p-0 mb-0 pl-1">
+                            <li class="breadcrumb-item font-14">{{ $subtitle??'' }}
                             </li>
-{{--                            <li class="breadcrumb-item"><a href="#">CSS</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="breadcrumb-item active">Cards Basic--}}
-{{--                            </li>--}}
                         </ol>
                     </div>
-
                 </div>
             </div>
         </div>
-        <div class="col s12">
-            <div class="container">
-                @yield('content')
-
-<!-- START RIGHT SIDEBAR NAV -->
-{{--                <aside id="right-sidebar-nav">--}}
-{{--                    <div id="slide-out-right" class="slide-out-right-sidenav sidenav rightside-navigation">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="slide-out-right-title">--}}
-{{--                                <div class="col s12 border-bottom-1 pb-0 pt-1">--}}
-{{--                                    <div class="row">--}}
-{{--                                        <div class="col s2 pr-0 center">--}}
-{{--                                            <i class="material-icons vertical-text-middle"><a href="#" class="sidenav-close">clear</a></i>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="col s10 pl-0">--}}
-{{--                                            <ul class="tabs">--}}
-{{--                                                <li class="tab col s4 p-0">--}}
-{{--                                                    <a href="#messages" class="active">--}}
-{{--                                                        <span>Messages</span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                                <li class="tab col s4 p-0">--}}
-{{--                                                    <a href="#settings">--}}
-{{--                                                        <span>Settings</span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                                <li class="tab col s4 p-0">--}}
-{{--                                                    <a href="#activity">--}}
-{{--                                                        <span>Activity</span>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="slide-out-right-body row pl-3">--}}
-{{--                                <div id="messages" class="col s12 pb-0">--}}
-{{--                                    <div class="collection border-none mb-0">--}}
-{{--                                        <input class="header-search-input mt-4 mb-2" type="text" name="Search"--}}
-{{--                                               placeholder="Search Messages" />--}}
-{{--                                        <ul class="collection right-sidebar-chat p-0 mb-0">--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Elizabeth Elliott</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Thank you</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">5.00 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-1.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Mary Adams</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Hello Boo</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">4.14 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-2.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Caleb Richards</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Hello Boo</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">4.14 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-3.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Caleb Richards</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Keny !</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">9.00 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-4.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">June Lane</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Ohh God</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">4.14 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-5.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Edward Fletcher</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Love you</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">5.15 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-6.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Crystal Bates</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Can we</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">8.00 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Nathan Watts</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Great!</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">9.53 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-8.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Willard Wood</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Do it</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">4.20 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-1.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Ronnie Ellis</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Got that</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">5.20 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-9.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Daniel Russell</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Thank you</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">12.00 AM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-10.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Sarah Graves</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Okay you</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">11.14 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-off avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-11.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Andrew Hoffman</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Can do</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">7.30 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                            <li--}}
-{{--                                                class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"--}}
-{{--                                                data-target="slide-out-chat">--}}
-{{--                          <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                                  src="manage/images/avatar/avatar-12.png" alt="avatar" />--}}
-{{--                            <i></i>--}}
-{{--                          </span>--}}
-{{--                                                <div class="user-content">--}}
-{{--                                                    <h6 class="line-height-0">Camila Lynch</h6>--}}
-{{--                                                    <p class="medium-small blue-grey-text text-lighten-3 pt-3">Leave it</p>--}}
-{{--                                                </div>--}}
-{{--                                                <span class="secondary-content medium-small">2.00 PM</span>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div id="settings" class="col s12">--}}
-{{--                                    <p class="setting-header mt-8 mb-3 ml-5 font-weight-900">GENERAL SETTINGS</p>--}}
-{{--                                    <ul class="collection border-none">--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Notifications</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input checked type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Show recent activity</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Show recent activity</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Show Task statistics</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Show your emails</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Email Notifications</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input checked type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                    <p class="setting-header mt-7 mb-3 ml-5 font-weight-900">SYSTEM SETTINGS</p>--}}
-{{--                                    <ul class="collection border-none">--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>System Logs</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Error Reporting</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Applications Logs</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input checked type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Backup Servers</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="collection-item border-none">--}}
-{{--                                            <div class="m-0">--}}
-{{--                                                <span>Audit Logs</span>--}}
-{{--                                                <div class="switch right">--}}
-{{--                                                    <label>--}}
-{{--                                                        <input type="checkbox" />--}}
-{{--                                                        <span class="lever"></span>--}}
-{{--                                                    </label>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                                <div id="activity" class="col s12">--}}
-{{--                                    <div class="activity">--}}
-{{--                                        <p class="mt-5 mb-0 ml-5 font-weight-900">SYSTEM LOGS</p>--}}
-{{--                                        <ul class="widget-timeline mb-0">--}}
-{{--                                            <li class="timeline-items timeline-icon-green active">--}}
-{{--                                                <div class="timeline-time">Today</div>--}}
-{{--                                                <h6 class="timeline-title">Homepage mockup design</h6>--}}
-{{--                                                <p class="timeline-text">Melissa liked your activity.</p>--}}
-{{--                                                <div class="timeline-content orange-text">Important</div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-cyan active">--}}
-{{--                                                <div class="timeline-time">10 min</div>--}}
-{{--                                                <h6 class="timeline-title">Melissa liked your activity Drinks.</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content green-text">Resolved</div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-red active">--}}
-{{--                                                <div class="timeline-time">30 mins</div>--}}
-{{--                                                <h6 class="timeline-title">12 new users registered</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content">--}}
-{{--                                                    <img src="manage/images/icon/pdf.png" alt="document" height="30" width="25"--}}
-{{--                                                         class="mr-1">Registration.doc--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-indigo active">--}}
-{{--                                                <div class="timeline-time">2 Hrs</div>--}}
-{{--                                                <h6 class="timeline-title">Tina is attending your activity</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content">--}}
-{{--                                                    <img src="manage/images/icon/pdf.png" alt="document" height="30" width="25"--}}
-{{--                                                         class="mr-1">Activity.doc--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-orange">--}}
-{{--                                                <div class="timeline-time">5 hrs</div>--}}
-{{--                                                <h6 class="timeline-title">Josh is now following you</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content red-text">Pending</div>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                        <p class="mt-5 mb-0 ml-5 font-weight-900">APPLICATIONS LOGS</p>--}}
-{{--                                        <ul class="widget-timeline mb-0">--}}
-{{--                                            <li class="timeline-items timeline-icon-green active">--}}
-{{--                                                <div class="timeline-time">Just now</div>--}}
-{{--                                                <h6 class="timeline-title">New order received urgent</h6>--}}
-{{--                                                <p class="timeline-text">Melissa liked your activity.</p>--}}
-{{--                                                <div class="timeline-content orange-text">Important</div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-cyan active">--}}
-{{--                                                <div class="timeline-time">05 min</div>--}}
-{{--                                                <h6 class="timeline-title">System shutdown.</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content blue-text">Urgent</div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-red">--}}
-{{--                                                <div class="timeline-time">20 mins</div>--}}
-{{--                                                <h6 class="timeline-title">Database overloaded 89%</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content">--}}
-{{--                                                    <img src="manage/images/icon/pdf.png" alt="document" height="30" width="25"--}}
-{{--                                                         class="mr-1">Database-log.doc--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                        <p class="mt-5 mb-0 ml-5 font-weight-900">SERVER LOGS</p>--}}
-{{--                                        <ul class="widget-timeline mb-0">--}}
-{{--                                            <li class="timeline-items timeline-icon-green active">--}}
-{{--                                                <div class="timeline-time">10 min</div>--}}
-{{--                                                <h6 class="timeline-title">System error</h6>--}}
-{{--                                                <p class="timeline-text">Melissa liked your activity.</p>--}}
-{{--                                                <div class="timeline-content red-text">Error</div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="timeline-items timeline-icon-cyan">--}}
-{{--                                                <div class="timeline-time">1 min</div>--}}
-{{--                                                <h6 class="timeline-title">Production server down.</h6>--}}
-{{--                                                <p class="timeline-text">Here are some news feed interactions concepts.</p>--}}
-{{--                                                <div class="timeline-content blue-text">Urgent</div>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <!-- Slide Out Chat -->--}}
-{{--                    <ul id="slide-out-chat" class="sidenav slide-out-right-sidenav-chat">--}}
-{{--                        <li class="center-align pt-2 pb-2 sidenav-close chat-head">--}}
-{{--                            <a href="#!"><i class="material-icons mr-0">chevron_left</i>Elizabeth Elliott</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="chat-body">--}}
-{{--                            <ul class="collection">--}}
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">hello!</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">How can we help? We're here for you!</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">I am looking for the best admin template.?</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">Materialize admin is the responsive materializecss admin template.</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-
-{{--                                <li class="collection-item display-grid width-100 center-align">--}}
-{{--                                    <p>8:20 a.m.</p>--}}
-{{--                                </li>--}}
-
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">Ohh! very nice</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">Thank you.</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">How can I purchase it?</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-
-{{--                                <li class="collection-item display-grid width-100 center-align">--}}
-{{--                                    <p>9:00 a.m.</p>--}}
-{{--                                </li>--}}
-
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">From ThemeForest.</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">Only $24</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">Ohh! Thank you.</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">--}}
-{{--                    <span class="avatar-status avatar-online avatar-50"><img--}}
-{{--                            src="manage/images/avatar/avatar-7.png" alt="avatar" />--}}
-{{--                    </span>--}}
-{{--                                    <div class="user-content speech-bubble">--}}
-{{--                                        <p class="medium-small">I will purchase it for sure.</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">Great, Feel free to get in touch on</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li class="collection-item display-flex avatar justify-content-end pl-5 pb-0"--}}
-{{--                                    data-target="slide-out-chat">--}}
-{{--                                    <div class="user-content speech-bubble-right">--}}
-{{--                                        <p class="medium-small">https://pixinvent.ticksy.com/</p>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-{{--                        <li class="center-align chat-footer">--}}
-{{--                            <form class="col s12" onsubmit="slideOutChat()" action="javascript:void(0);">--}}
-{{--                                <div class="input-field">--}}
-{{--                                    <input id="icon_prefix" type="text" class="search" />--}}
-{{--                                    <label for="icon_prefix">Type here..</label>--}}
-{{--                                    <a onclick="slideOutChat()"><i class="material-icons prefix">send</i></a>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </aside>--}}
-                <!-- END RIGHT SIDEBAR NAV -->
-                <div style="bottom: 50px; right: 19px;" class="fixed-action-btn direction-top">
-                    <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
-                        <i class="material-icons">add</i>
-                    </a>
-                    <ul>
-                        <li><a href="css-helpers.html" class="btn-floating blue"><i class="material-icons">help_outline</i></a>
-                        </li>
-                        <li><a href="cards-extended.html" class="btn-floating green"><i class="material-icons">widgets</i></a>
-                        </li>
-                        <li><a href="app-calendar.html" class="btn-floating amber"><i class="material-icons">today</i></a></li>
-                        <li><a href="app-email.html" class="btn-floating red"><i class="material-icons">mail_outline</i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content-overlay"></div>
+        <div class="content-body pt-1">
+            @yield('content')
         </div>
     </div>
 </div>
-<!-- END: Page Main-->
+<!-- END: Content-->
 
-<!-- Theme Customizer -->
 
-{{--<a href="#" data-target="theme-cutomizer-out"--}}
-{{--   class="btn btn-customizer pink accent-2 white-text sidenav-trigger theme-cutomizer-trigger"><i--}}
-{{--        class="material-icons">settings</i></a>--}}
-
-{{--<div id="theme-cutomizer-out" class="theme-cutomizer sidenav row">--}}
-{{--    <div class="col s12">--}}
-{{--        <a class="sidenav-close" href="#!"><i class="material-icons">close</i></a>--}}
-{{--        <h5 class="theme-cutomizer-title">Theme Customizer</h5>--}}
-{{--        <p class="medium-small">Customize & Preview in Real Time</p>--}}
-{{--        <div class="menu-options">--}}
-{{--            <h6 class="mt-6">Menu Options</h6>--}}
-{{--            <hr class="customize-devider" />--}}
-{{--            <div class="menu-options-form row">--}}
-{{--                <div class="input-field col s12 menu-color mb-0">--}}
-{{--                    <p class="mt-0">Menu Color</p>--}}
-{{--                    <div class="gradient-color center-align">--}}
-{{--                        <span class="menu-color-option gradient-45deg-indigo-blue" data-color="gradient-45deg-indigo-blue"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-purple-deep-orange"--}}
-{{--                              data-color="gradient-45deg-purple-deep-orange"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-light-blue-cyan"--}}
-{{--                              data-color="gradient-45deg-light-blue-cyan"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-purple-amber"--}}
-{{--                              data-color="gradient-45deg-purple-amber"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-purple-deep-purple"--}}
-{{--                              data-color="gradient-45deg-purple-deep-purple"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-deep-orange-orange"--}}
-{{--                              data-color="gradient-45deg-deep-orange-orange"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-green-teal" data-color="gradient-45deg-green-teal"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-indigo-light-blue"--}}
-{{--                              data-color="gradient-45deg-indigo-light-blue"></span>--}}
-{{--                        <span class="menu-color-option gradient-45deg-red-pink" data-color="gradient-45deg-red-pink"></span>--}}
-{{--                    </div>--}}
-{{--                    <div class="solid-color center-align">--}}
-{{--                        <span class="menu-color-option red" data-color="red"></span>--}}
-{{--                        <span class="menu-color-option purple" data-color="purple"></span>--}}
-{{--                        <span class="menu-color-option pink" data-color="pink"></span>--}}
-{{--                        <span class="menu-color-option deep-purple" data-color="deep-purple"></span>--}}
-{{--                        <span class="menu-color-option cyan" data-color="cyan"></span>--}}
-{{--                        <span class="menu-color-option teal" data-color="teal"></span>--}}
-{{--                        <span class="menu-color-option light-blue" data-color="light-blue"></span>--}}
-{{--                        <span class="menu-color-option amber darken-3" data-color="amber darken-3"></span>--}}
-{{--                        <span class="menu-color-option brown darken-2" data-color="brown darken-2"></span>--}}
-{{--                    </div>--}}
+<!-- BEGIN: Customizer-->
+{{--<div class="customizer d-none d-md-block"><a class="customizer-toggle" href="javascript:void(0);"><i class="bx bx-cog bx bx-spin white"></i></a>--}}
+{{--    <div class="customizer-content p-2">--}}
+{{--        <h4 class="text-uppercase mb-0">Theme Customizer</h4>--}}
+{{--        <small>Customize & Preview in Real Time</small>--}}
+{{--        <a href="javascript:void(0)" class="customizer-close">--}}
+{{--            <i class="bx bx-x"></i>--}}
+{{--        </a>--}}
+{{--        <hr>--}}
+{{--        <!-- Theme options starts -->--}}
+{{--        <h5 class="mt-1">Theme Layout</h5>--}}
+{{--        <div class="theme-layouts">--}}
+{{--            <div class="d-flex justify-content-start">--}}
+{{--                <div class="mx-50">--}}
+{{--                    <fieldset>--}}
+{{--                        <div class="radio">--}}
+{{--                            <input type="radio" name="layoutOptions" value="false" id="radio-light" class="layout-name"--}}
+{{--                                   data-layout="" checked>--}}
+{{--                            <label for="radio-light">Light</label>--}}
+{{--                        </div>--}}
+{{--                    </fieldset>--}}
 {{--                </div>--}}
-{{--                <div class="input-field col s12 menu-bg-color mb-0">--}}
-{{--                    <p class="mt-0">Menu Background Color</p>--}}
-{{--                    <div class="gradient-color center-align">--}}
-{{--              <span class="menu-bg-color-option gradient-45deg-indigo-blue"--}}
-{{--                    data-color="gradient-45deg-indigo-blue"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-purple-deep-orange"--}}
-{{--                              data-color="gradient-45deg-purple-deep-orange"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-light-blue-cyan"--}}
-{{--                              data-color="gradient-45deg-light-blue-cyan"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-purple-amber"--}}
-{{--                              data-color="gradient-45deg-purple-amber"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-purple-deep-purple"--}}
-{{--                              data-color="gradient-45deg-purple-deep-purple"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-deep-orange-orange"--}}
-{{--                              data-color="gradient-45deg-deep-orange-orange"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-green-teal"--}}
-{{--                              data-color="gradient-45deg-green-teal"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-indigo-light-blue"--}}
-{{--                              data-color="gradient-45deg-indigo-light-blue"></span>--}}
-{{--                        <span class="menu-bg-color-option gradient-45deg-red-pink" data-color="gradient-45deg-red-pink"></span>--}}
-{{--                    </div>--}}
-{{--                    <div class="solid-color center-align">--}}
-{{--                        <span class="menu-bg-color-option red" data-color="red"></span>--}}
-{{--                        <span class="menu-bg-color-option purple" data-color="purple"></span>--}}
-{{--                        <span class="menu-bg-color-option pink" data-color="pink"></span>--}}
-{{--                        <span class="menu-bg-color-option deep-purple" data-color="deep-purple"></span>--}}
-{{--                        <span class="menu-bg-color-option cyan" data-color="cyan"></span>--}}
-{{--                        <span class="menu-bg-color-option teal" data-color="teal"></span>--}}
-{{--                        <span class="menu-bg-color-option light-blue" data-color="light-blue"></span>--}}
-{{--                        <span class="menu-bg-color-option amber darken-3" data-color="amber darken-3"></span>--}}
-{{--                        <span class="menu-bg-color-option brown darken-2" data-color="brown darken-2"></span>--}}
-{{--                    </div>--}}
+{{--                <div class="mx-50">--}}
+{{--                    <fieldset>--}}
+{{--                        <div class="radio">--}}
+{{--                            <input type="radio" name="layoutOptions" value="false" id="radio-dark" class="layout-name"--}}
+{{--                                   data-layout="dark-layout">--}}
+{{--                            <label for="radio-dark">Dark</label>--}}
+{{--                        </div>--}}
+{{--                    </fieldset>--}}
 {{--                </div>--}}
-{{--                <div class="input-field col s12">--}}
-{{--                    <div class="switch">--}}
-{{--                        Menu Dark--}}
-{{--                        <label class="float-right"><input class="menu-dark-checkbox" type="checkbox" /> <span--}}
-{{--                                class="lever ml-0"></span></label>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="input-field col s12">--}}
-{{--                    <div class="switch">--}}
-{{--                        Menu Collapsed--}}
-{{--                        <label class="float-right"><input class="menu-collapsed-checkbox" type="checkbox" /> <span--}}
-{{--                                class="lever ml-0"></span></label>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="input-field col s12">--}}
-{{--                    <div class="switch">--}}
-{{--                        <p class="mt-0">Menu Selection</p>--}}
-{{--                        <label>--}}
-{{--                            <input class="menu-selection-radio with-gap" value="sidenav-active-square" name="menu-selection"--}}
-{{--                                   type="radio" />--}}
-{{--                            <span>Square</span>--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input class="menu-selection-radio with-gap" value="sidenav-active-rounded" name="menu-selection"--}}
-{{--                                   type="radio" />--}}
-{{--                            <span>Rounded</span>--}}
-{{--                        </label>--}}
-{{--                        <label>--}}
-{{--                            <input class="menu-selection-radio with-gap" value="" name="menu-selection" type="radio" />--}}
-{{--                            <span>Normal</span>--}}
-{{--                        </label>--}}
-{{--                    </div>--}}
+{{--                <div class="mx-50">--}}
+{{--                    <fieldset>--}}
+{{--                        <div class="radio">--}}
+{{--                            <input type="radio" name="layoutOptions" value="false" id="radio-semi-dark" class="layout-name"--}}
+{{--                                   data-layout="semi-dark-layout">--}}
+{{--                            <label for="radio-semi-dark">Semi Dark</label>--}}
+{{--                        </div>--}}
+{{--                    </fieldset>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-{{--        <h6 class="mt-6">Navbar Options</h6>--}}
-{{--        <hr class="customize-devider" />--}}
-{{--        <div class="navbar-options row">--}}
-{{--            <div class="input-field col s12 navbar-color mb-0">--}}
-{{--                <p class="mt-0">Navbar Color</p>--}}
-{{--                <div class="gradient-color center-align">--}}
-{{--                    <span class="navbar-color-option gradient-45deg-indigo-blue" data-color="gradient-45deg-indigo-blue"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-purple-deep-orange"--}}
-{{--                          data-color="gradient-45deg-purple-deep-orange"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-light-blue-cyan"--}}
-{{--                          data-color="gradient-45deg-light-blue-cyan"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-purple-amber"--}}
-{{--                          data-color="gradient-45deg-purple-amber"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-purple-deep-purple"--}}
-{{--                          data-color="gradient-45deg-purple-deep-purple"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-deep-orange-orange"--}}
-{{--                          data-color="gradient-45deg-deep-orange-orange"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-green-teal" data-color="gradient-45deg-green-teal"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-indigo-light-blue"--}}
-{{--                          data-color="gradient-45deg-indigo-light-blue"></span>--}}
-{{--                    <span class="navbar-color-option gradient-45deg-red-pink" data-color="gradient-45deg-red-pink"></span>--}}
+{{--        <!-- Theme options starts -->--}}
+{{--        <hr>--}}
+
+{{--        <!-- Menu Colors Starts -->--}}
+{{--        <div id="customizer-theme-colors">--}}
+{{--            <h5>Menu Colors</h5>--}}
+{{--            <ul class="list-inline unstyled-list">--}}
+{{--                <li class="color-box bg-primary selected" data-color="theme-primary"></li>--}}
+{{--                <li class="color-box bg-success" data-color="theme-success"></li>--}}
+{{--                <li class="color-box bg-danger" data-color="theme-danger"></li>--}}
+{{--                <li class="color-box bg-info" data-color="theme-info"></li>--}}
+{{--                <li class="color-box bg-warning" data-color="theme-warning"></li>--}}
+{{--                <li class="color-box bg-dark" data-color="theme-dark"></li>--}}
+{{--            </ul>--}}
+{{--            <hr>--}}
+{{--        </div>--}}
+{{--        <!-- Menu Colors Ends -->--}}
+{{--        <!-- Menu Icon Animation Starts -->--}}
+{{--        <div id="menu-icon-animation">--}}
+{{--            <div class="d-flex justify-content-between align-items-center">--}}
+{{--                <div class="icon-animation-title">--}}
+{{--                    <h5 class="pt-25">Icon Animation</h5>--}}
 {{--                </div>--}}
-{{--                <div class="solid-color center-align">--}}
-{{--                    <span class="navbar-color-option red" data-color="red"></span>--}}
-{{--                    <span class="navbar-color-option purple" data-color="purple"></span>--}}
-{{--                    <span class="navbar-color-option pink" data-color="pink"></span>--}}
-{{--                    <span class="navbar-color-option deep-purple" data-color="deep-purple"></span>--}}
-{{--                    <span class="navbar-color-option cyan" data-color="cyan"></span>--}}
-{{--                    <span class="navbar-color-option teal" data-color="teal"></span>--}}
-{{--                    <span class="navbar-color-option light-blue" data-color="light-blue"></span>--}}
-{{--                    <span class="navbar-color-option amber darken-3" data-color="amber darken-3"></span>--}}
-{{--                    <span class="navbar-color-option brown darken-2" data-color="brown darken-2"></span>--}}
+{{--                <div class="icon-animation-switch">--}}
+{{--                    <div class="custom-control custom-switch">--}}
+{{--                        <input type="checkbox" class="custom-control-input" checked id="icon-animation-switch">--}}
+{{--                        <label class="custom-control-label" for="icon-animation-switch"></label>--}}
+{{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-{{--            <div class="input-field col s12">--}}
-{{--                <div class="switch">--}}
-{{--                    Navbar Dark--}}
-{{--                    <label class="float-right"><input class="navbar-dark-checkbox" type="checkbox" /> <span--}}
-{{--                            class="lever ml-0"></span></label>--}}
-{{--                </div>--}}
+{{--            <hr>--}}
+{{--        </div>--}}
+{{--        <!-- Menu Icon Animation Ends -->--}}
+{{--        <!-- Collapse sidebar switch starts -->--}}
+{{--        <div class="collapse-sidebar d-flex justify-content-between align-items-center">--}}
+{{--            <div class="collapse-option-title">--}}
+{{--                <h5 class="pt-25">Collapse Menu</h5>--}}
 {{--            </div>--}}
-{{--            <div class="input-field col s12">--}}
-{{--                <div class="switch">--}}
-{{--                    Navbar Fixed--}}
-{{--                    <label class="float-right"><input class="navbar-fixed-checkbox" type="checkbox" checked /> <span--}}
-{{--                            class="lever ml-0"></span></label>--}}
+{{--            <div class="collapse-option-switch">--}}
+{{--                <div class="custom-control custom-switch">--}}
+{{--                    <input type="checkbox" class="custom-control-input" id="collapse-sidebar-switch">--}}
+{{--                    <label class="custom-control-label" for="collapse-sidebar-switch"></label>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-{{--        <h6 class="mt-6">Footer Options</h6>--}}
-{{--        <hr class="customize-devider" />--}}
-{{--        <div class="navbar-options row">--}}
-{{--            <div class="input-field col s12">--}}
-{{--                <div class="switch">--}}
-{{--                    Footer Dark--}}
-{{--                    <label class="float-right"><input class="footer-dark-checkbox" type="checkbox" /> <span--}}
-{{--                            class="lever ml-0"></span></label>--}}
-{{--                </div>--}}
+{{--        <!-- Collapse sidebar switch Ends -->--}}
+{{--        <hr>--}}
+
+{{--        <!-- Navbar colors starts -->--}}
+{{--        <div id="customizer-navbar-colors">--}}
+{{--            <h5>Navbar Colors</h5>--}}
+{{--            <ul class="list-inline unstyled-list">--}}
+{{--                <li class="color-box bg-white border selected" data-navbar-default=""></li>--}}
+{{--                <li class="color-box bg-primary" data-navbar-color="bg-primary"></li>--}}
+{{--                <li class="color-box bg-success" data-navbar-color="bg-success"></li>--}}
+{{--                <li class="color-box bg-danger" data-navbar-color="bg-danger"></li>--}}
+{{--                <li class="color-box bg-info" data-navbar-color="bg-info"></li>--}}
+{{--                <li class="color-box bg-warning" data-navbar-color="bg-warning"></li>--}}
+{{--                <li class="color-box bg-dark" data-navbar-color="bg-dark"></li>--}}
+{{--            </ul>--}}
+{{--            <small><strong>Note :</strong> This option with work only on sticky navbar when you scroll page.</small>--}}
+{{--            <hr>--}}
+{{--        </div>--}}
+{{--        <!-- Navbar colors starts -->--}}
+{{--        <!-- Navbar Type Starts -->--}}
+{{--        <h5>Navbar Type</h5>--}}
+{{--        <div class="navbar-type d-flex justify-content-start">--}}
+{{--            <div class="hidden-ele mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="navbarType" value="false" id="navbar-hidden">--}}
+{{--                        <label for="navbar-hidden">Hidden</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
 {{--            </div>--}}
-{{--            <div class="input-field col s12">--}}
-{{--                <div class="switch">--}}
-{{--                    Footer Fixed--}}
-{{--                    <label class="float-right"><input class="footer-fixed-checkbox" type="checkbox" /> <span--}}
-{{--                            class="lever ml-0"></span></label>--}}
+{{--            <div class="mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="navbarType" value="false" id="navbar-static">--}}
+{{--                        <label for="navbar-static">Static</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
+{{--            </div>--}}
+{{--            <div class="mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="navbarType" value="false" id="navbar-sticky" checked>--}}
+{{--                        <label for="navbar-sticky">Fixed</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <hr>--}}
+{{--        <!-- Navbar Type Starts -->--}}
+
+{{--        <!-- Footer Type Starts -->--}}
+{{--        <h5>Footer Type</h5>--}}
+{{--        <div class="footer-type d-flex justify-content-start">--}}
+{{--            <div class="mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="footerType" value="false" id="footer-hidden">--}}
+{{--                        <label for="footer-hidden">Hidden</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
+{{--            </div>--}}
+{{--            <div class="mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="footerType" value="false" id="footer-static" checked>--}}
+{{--                        <label for="footer-static">Static</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
+{{--            </div>--}}
+{{--            <div class="mx-50">--}}
+{{--                <fieldset>--}}
+{{--                    <div class="radio">--}}
+{{--                        <input type="radio" name="footerType" value="false" id="footer-sticky">--}}
+{{--                        <label for="footer-sticky" class="">Sticky</label>--}}
+{{--                    </div>--}}
+{{--                </fieldset>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- Footer Type Ends -->--}}
+{{--        <hr>--}}
+
+{{--        <!-- Card Shadow Starts-->--}}
+{{--        <div class="card-shadow d-flex justify-content-between align-items-center py-25">--}}
+{{--            <div class="hide-scroll-title">--}}
+{{--                <h5 class="pt-25">Card Shadow</h5>--}}
+{{--            </div>--}}
+{{--            <div class="card-shadow-switch">--}}
+{{--                <div class="custom-control custom-switch">--}}
+{{--                    <input type="checkbox" class="custom-control-input" checked id="card-shadow-switch">--}}
+{{--                    <label class="custom-control-label" for="card-shadow-switch"></label>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
+{{--        <!-- Card Shadow Ends-->--}}
+{{--        <hr>--}}
+
+{{--        <!-- Hide Scroll To Top Starts-->--}}
+{{--        <div class="hide-scroll-to-top d-flex justify-content-between align-items-center py-25">--}}
+{{--            <div class="hide-scroll-title">--}}
+{{--                <h5 class="pt-25">Hide Scroll To Top</h5>--}}
+{{--            </div>--}}
+{{--            <div class="hide-scroll-top-switch">--}}
+{{--                <div class="custom-control custom-switch">--}}
+{{--                    <input type="checkbox" class="custom-control-input" id="hide-scroll-top-switch">--}}
+{{--                    <label class="custom-control-label" for="hide-scroll-top-switch"></label>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- Hide Scroll To Top Ends-->--}}
 {{--    </div>--}}
-{{--</div>--}}
-<!--/ Theme Customizer -->
 
+{{--</div>--}}
+<!-- End: Customizer-->
+
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
 
 <!-- BEGIN: Footer-->
-
-<footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow">
-    <div class="footer-copyright">
-        <div class="container">
-            <span>&copy; 2021 All rights reserved</span>
-            <span class="right hide-on-small-only">Design and
-          Developed by <a href="https:mehdikord.ir" target="_blank">MEHDI KORD</a>
-            </span>
-        </div>
-    </div>
+<footer class="footer footer-static footer-light">
+    <p class="clearfix mb-0"><span class="float-left d-inline-block">2021 &copy; Shop </span><span
+            class="float-right d-sm-inline-block d-none">Crafted with<i
+                class="bx bxs-heart pink mx-50 font-small-3"></i> by <a class="text-uppercase" href="https://mehdikord.ir" target="_blank">Mehdi Kord</a></span>
+        <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
+    </p>
 </footer>
-
 <!-- END: Footer-->
-<!-- BEGIN VENDOR JS-->
-<script src="{{ asset('manage/js/vendors.min.js') }}"></script>
-<!-- BEGIN VENDOR JS-->
-<!-- BEGIN PAGE VENDOR JS-->
-<!-- END PAGE VENDOR JS-->
-<!-- BEGIN THEME  JS-->
-<script src="{{ asset('manage/js/plugins.min.js') }}"></script>
-<script src="{{ asset('manage/js/search.min.js') }}"></script>
-<script src="{{ asset('manage/js/custom/custom-script.min.js') }}"></script>
-<script src="{{ asset('manage/js/scripts/customizer.min.js') }}"></script>
-<script src="{{ asset('fontawesome6/js/all.min.js') }}"></script>
-<!-- END THEME  JS-->
-<!-- BEGIN PAGE LEVEL JS-->
-<!-- END PAGE LEVEL JS-->
 
+
+<!-- BEGIN: Vendor JS-->
+<script src="{{ asset('manage/app-assets/vendors/js/vendors.min.js') }}"></script>
+
+<script src="manage/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.min.js"></script>
+<script src="manage/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.min.js"></script>
+<script src="manage/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+<script src="{{ asset('manage/app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
+
+
+<!-- BEGIN: Theme JS-->
+<script src="{{ asset('manage/app-assets/js/scripts/configs/vertical-menu-dark.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/js/core/app-menu.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/js/core/app.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/js/scripts/components.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/js/scripts/footer.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/js/scripts/customizer.min.js') }}"></script>
+
+<script src="{{ asset('manage/app-assets/js/scripts/forms/select/form-select2.min.js') }}"></script>
+
+<!-- END: Theme JS-->
 @yield('script')
 </body>
+<!-- END: Body-->
 
 </html>

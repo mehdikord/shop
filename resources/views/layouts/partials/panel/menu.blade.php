@@ -1,32 +1,35 @@
-
-<li class="bold ml-3">
-    <a class="waves-effect waves-cyan " href="app-email.html">
-        <i class="fa fa-desktop font-20"></i>
-        <span class="menu-title ml-5 font-15" data-i18n="Mail">داشبورد</span>
-{{--        <span class="badge new badge pill pink accent-2 float-right mr-2">5</span>--}}
+<li class="nav-item {{panel_check_menu_active('panel')}}">
+    <a href="{{ route('panel_dashboard') }}">
+        <i class="bx bxs-dashboard font-24 text-danger"></i>
+        <span class="menu-title text-truncate">داشبورد</span>
     </a>
 </li>
-<li class="navigation-header">
-    <a class="navigation-header-text">محصولات و دسته بندی</a>
-</li>
-
-<li class="bold ml-3">
-    <a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)">
-        <i class="fa fa-desktop font-20"></i>
-        <span class="menu-title menu-title ml-5 font-15" data-i18n="Dashboard">دسته بندی ها</span>
-
+<li class="navigation-header text-truncate"><span class="text-warning">محصولات و دسته‌ بندی</span></li>
+<li class="nav-item {{panel_check_menu_active('panel/categories')}}">
+    <a href="{{ route('panel_categories') }}">
+        <i class="bx bx-category-alt font-24 text-danger"></i>
+        <span class="menu-title text-truncate">دسته بندی ها</span>
     </a>
-    <div class="collapsible-body">
-        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-            <li>
-                <a href="{{ route('panel_categories') }}">
-                    <i class="material-icons">radio_button_unchecked</i>
-                    <span data-i18n="Modern">لیست دسته بندی</span>
-                </a>
-            </li>
-        </ul>
-    </div>
 </li>
-
-
+<li class=" nav-item">
+    <a href="">
+        <i class="" data-icon="desktop">
+        </i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span>
+        <span class="badge badge-light-danger badge-pill badge-round float-right mr-50 ml-auto">2</span>
+    </a>
+    <ul class="menu-content">
+        <li>
+            <a class="d-flex align-items-center" href="">
+                <i class="bx bx-right-arrow-alt"></i>
+                <span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span>
+            </a>
+        </li>
+        <li>
+            <a class="d-flex align-items-center" href="">
+                <i class="bx bx-right-arrow-alt"></i>
+                <span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span>
+            </a>
+        </li>
+    </ul>
+</li>
 
