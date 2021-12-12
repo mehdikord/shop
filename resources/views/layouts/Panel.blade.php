@@ -16,6 +16,8 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/vendors-rtl.min.css') }}">
     <!-- END: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/animate/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('manage/app-assets/vendors/css/forms/select/select2.min.css') }}">
 
 
@@ -181,6 +183,7 @@
             </div>
         </div>
         <div class="content-body pt-1">
+            @include('layouts.partials.errors')
             @yield('content')
         </div>
     </div>
@@ -412,6 +415,7 @@
 <script src="manage/app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
 <!-- BEGIN Vendor JS-->
 <script src="{{ asset('manage/app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
+<script src="{{ asset('manage/app-assets/vendors/js/extensions/sweetalert2.all.min.js') }}"></script>
 
 
 <!-- BEGIN: Theme JS-->
@@ -426,6 +430,9 @@
 
 <!-- END: Theme JS-->
 @yield('script')
+
+@include('layouts.partials.panel.alerts.alert')
+
 </body>
 <!-- END: Body-->
 

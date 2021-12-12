@@ -18,6 +18,7 @@ class AddNewFieldIntoUsers extends Migration
             $table->string('phone')->nullable()->after('name');
             $table->boolean('is_active')->default(1);
             $table->boolean('commenting')->default(1);
+            $table->boolean('api_token')->after('remember_token')->nullable();
             $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
         });
     }

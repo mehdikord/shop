@@ -24,7 +24,8 @@
                                             <i class="bx bx-x"></i>
                                         </button>
                                     </div>
-                                    <form action="">
+                                    <form action="{{ route('panel_categories_store') }}" method="post">
+                                        @csrf
                                         <div class="modal-body pt-2">
                                             <div class="form-group">
                                                 <label class="mb-1">نام دسته بندی <span class="text-danger">*</span></label>
@@ -32,7 +33,7 @@
                                             </div>
                                             <div class="form-group mt-2">
                                                 <label class="mb-1">در زیر مجموعه </label>
-                                                <select class="select2 form-control">
+                                                <select name="parent_id" class="select2 form-control">
                                                     <option></option>
                                                     @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{ $category->name }}</option>
@@ -49,7 +50,7 @@
                                                 <i class="bx bx-x d-block d-sm-none"></i>
                                                 <span class="d-none d-sm-block">بستن</span>
                                             </button>
-                                            <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                            <button type="submit" class="btn btn-primary ml-1">
                                                 <i class="bx bx-check d-block d-sm-none"></i>
                                                 <span class="d-none d-sm-block">افزودن</span>
                                             </button>
@@ -73,5 +74,6 @@
 @endsection
 
 @section('script')
+
 
 @endsection

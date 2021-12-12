@@ -40,6 +40,9 @@ Route::prefix('panel')->group(function (){
     Route::prefix('categories')->group(function (){
 
         Route::get('',[\App\Http\Controllers\Panel\CategoryController::class,'index'])->name('panel_categories');
+        Route::post('store',[\App\Http\Controllers\Panel\CategoryController::class,'store'])->name('panel_categories_store');
+
+
 
     });
 
